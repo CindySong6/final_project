@@ -18,10 +18,11 @@
         {% if blogs_data|length %}
         <tbody>
         {% for blog in blogs_data %}
+
         <tr>
-            <td><a href="/blog/{{blog[0]}}">{{blog[1]}}</a></td>
-            <td>{{blog[4]}}</td>
-            <td>{{blog[2]}}</td>
+            <td><a href="/blog/{{blog.id}}">{{blog.title}}</a></td>
+            <td>{{blog.user_id}}</td>
+            <td>{{blog.publised_date}}</td>
         </tr>
         {% endfor %}
         </tbody>

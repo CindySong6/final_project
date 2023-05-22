@@ -3,9 +3,8 @@
 {% block title %}Ziwei's Blogging Site{% endblock %}
 
 {% block content %}
-    <h1>Welcome to Ziwei's Blogging Site</h1>
-        <h3>{{post.title}}</h3>
-        <p>By {{post.author}} on {{post.date_posted}}</p>
-        <p>{{post.content}}</p>
-    {% endfor %}
+    <h1>{{blog.title}}</h1>
+    <p>Posted on {{blog.publised_date}}</p>
+    <p>{{blog.content}}</p>
+    <a class="btn btn-primary" href="{{url_for('views.delete_blog', id=blog.id)}}">DELETE</a>
 {% endblock %}
