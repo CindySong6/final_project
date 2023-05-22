@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Ziwei's Blogging Site{% endblock %}
+
+{% block content %}
+    <h1>Welcome to {{user.name}}'s Blogging Site</h1>
+    <p>Here are your blogs</p>
+    
+   
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Posted By</th>
+        </tr>
+        </thead>
+        {% if blogs_data|length %}
+        <tbody>
+        {% for blog in blogs_data %}
+        <tr>
+            <td><a href="/blog/{{blog[0]}}">{{blog[1]}}</a></td>
+            <td>{{blog[4]}}</td>
+            <td>{{blog[2]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        {% else %}
+            <p>There is no blog yet.</p>
+        {% endif %}
+        <a class="btn btn-primary" href="/add_blog">Add a blog here</a>
+{% endblock %}
